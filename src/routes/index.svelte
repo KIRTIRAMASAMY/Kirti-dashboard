@@ -20,69 +20,71 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">Monday</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <th scope="row">Mon</th>
+        <td>PH</td>
+        <td>PM</td>
+        <td>BI</td>
+        <td>BI</td>
+        <td>R</td>
+        <td>BM</td>
+        <td>BM</td>
+        <td>MT</td>
+        <td>MT</td>
+        <td>BC</td>
+        <td>BC</td>
       </tr>
       <tr>
-        <th scope="row">Tuesday</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <th scope="row">Tue</th>
+        <td>PJPK</td>
+        <td>MT</td>
+        <td>MT</td>
+        <td>BI</td>
+        <td>BI</td>
+        <td>E</td>
+        <td>BM</td>
+        <td>BM</td>
+        <td>BC</td>
+        <td>BC</td>
+        <td>PJPK</td>
       </tr>
       <tr>
-        <th scope="row">Wednesday</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <th scope="row">Wed</th>
+        <td>BC</td>
+        <td>BC</td>
+        <td>BC</td>
+        <td>PM</td>
+        <td>H</td>
+        <td>PKS</td>
+        <td>PKS</td>
+        <td>PKS</td>
+        <td>BM</td>
+        <td>BM</td>
       </tr>
       <tr>
-        <th scope="row">Thrusday</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <th scope="row">Thrs</th>
+        <td>SA</td>
+        <td>PJPK</td>
+        <td>BM</td>
+        <td>BM</td>
+        <td>A</td>
+        <td>PM</td>
+        <td>BC</td>
+        <td>BC</td>
+        <td>MT</td>
+        <td>MT</td>
       </tr>
       <tr>
-        <th scope="row">Friday</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <th scope="row">Fri</th>
+        <td>BI</td>
+        <td>BI</td>
+        <td>BM</td>
+        <td>BM</td>
+        <td>T</td>
+        <td>BC</td>
+        <td>BC</td>
+        <td>PM</td>
+        <td>SA</td>
+        <td>SA</td>
       </tr>
     </tbody>
   </table>
