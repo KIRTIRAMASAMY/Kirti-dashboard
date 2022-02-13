@@ -1,6 +1,4 @@
-<script>
- 
-</script>
+
 <h1><b><u>My Dashboard</u></b></h1>
 <br>
 <p>School Timetable</p>
