@@ -185,7 +185,7 @@
 <br>
 <table class="table">
     <thead>
-      <tr>
+      <tr class="table-dark">
         <th scope="col">Day</th>
         <th scope="col">1</th>
         <th scope="col">2</th>
@@ -202,7 +202,7 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">Mon</th>
+        <th scope="row" class="table-dark" >Mon</th>
         {#each timetable.Monday as timeSlot, index}
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
@@ -215,7 +215,7 @@
     	{/each}
 
       <tr>
-        <th scope="row">Tue</th>
+        <th scope="row" class="table-dark">Tue</th>
         {#each timetable.Tuesday as timeSlot, index}
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
@@ -229,7 +229,7 @@
 
       </tr>
       <tr>
-        <th scope="row">Wed</th>
+        <th scope="row" class="table-dark">Wed</th>
         {#each timetable.Wednesday as timeSlot, index}
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
@@ -243,7 +243,7 @@
 
       </tr>
       <tr>
-        <th scope="row">Thrs</th>
+        <th scope="row" class="table-dark">Thrs</th>
         {#each timetable.Thursday as timeSlot, index}
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
@@ -257,7 +257,7 @@
 
       </tr>
       <tr>
-        <th scope="row">Fri</th>
+        <th scope="row" class="table-dark">Fri</th>
         {#each timetable.Friday as timeSlot, index}
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
