@@ -1,6 +1,16 @@
 <script>
  import supabase from "$lib/db";
 
+ var  curday = ""
+ var  curIndex =""
+ var  curName=""
+ var  curPeriod=""
+ var  curStyle=""
+
+ function showCurData(){
+	 
+ }
+
   function addTimeSlot(day){
 if (day==="Monday") {
 	timetable.Monday = [
