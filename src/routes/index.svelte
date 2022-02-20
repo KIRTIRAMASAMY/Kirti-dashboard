@@ -7,25 +7,25 @@ if (day==="Monday") {
     ...timetable.Monday,
     { name: "??", period: 1, style: "" }
   ];
-
+}
    else if (day==="Tuesday") {
 	timetable.Tuesday = [
     ...timetable.Tuesday,
     { name: "??", period: 1, style: "" }
   ];
-
+   }
   else if (day==="Wednesday") {
 	timetable.Wednesday = [
     ...timetable.Wednesday,
     { name: "??", period: 1, style: "" }
   ];
-
+  }
   else if (day==="Thursday") {
 	timetable.Thursday = [
     ...timetable.Thursdayday,
     { name: "??", period: 1, style: "" }
   ];
-
+  }
   else if (day==="Friday") {
 	timetable.Friday = [
     ...timetable.Friday,
@@ -241,7 +241,7 @@ if (day==="Monday") {
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
           	type="button"
-          	class="btn"
+          	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
         	>
           	{timeSlot.name}
         	</button>
@@ -257,7 +257,7 @@ if (day==="Monday") {
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
           	type="button"
-          	class="btn"
+          	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
         	>
           	{timeSlot.name}
         	</button>
@@ -273,7 +273,7 @@ if (day==="Monday") {
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
           	type="button"
-          	class="btn"
+          	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
         	>
           	{timeSlot.name}
         	</button>
@@ -288,7 +288,7 @@ if (day==="Monday") {
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
           	type="button"
-          	class="btn"
+          	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
         	>
           	{timeSlot.name}
         	</button>
@@ -304,7 +304,7 @@ if (day==="Monday") {
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
           	type="button"
-          	class="btn"
+          	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
         	>
           	{timeSlot.name}
         	</button>
@@ -316,7 +316,50 @@ if (day==="Monday") {
       </tr>
     </tbody>
   </table>
+</div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="editTimeSlot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Time Slot</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Name</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Period</span>
+  <input type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+      
+		<div class="input-group mb-3">
+			<label class="input-group-text" for="styleSelect">Period</label>
+  <select class="form-select" id="styleSelect">
+    <option selected value="">Default</option>
+    <option value="table-primary">Blue</option>
+    <option value="table-success">Green</option>
+    <option value="table-danger">Red</option>
+	<option value="table-secondary">Grey</option>
+	<option value="table-warning">Yellow</option>
+  </select>
+</div>
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+		<button type="button" class="btn btn-primary">Save Changes</button>
+
+      </div>
+    </div>
+  </div>
 </div>
 
   <!-- Sign Out -->
