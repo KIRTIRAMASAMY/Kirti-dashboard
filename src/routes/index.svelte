@@ -1,6 +1,40 @@
 <script>
  import supabase from "$lib/db";
 
+  function addTimeSlot(day){
+if (day==="Monday") {
+	timetable.Monday = [
+    ...timetable.Monday,
+    { name: "??", period: 1, style: "" }
+  ];
+
+   else if (day==="Tuesday") {
+	timetable.Tuesday = [
+    ...timetable.Tuesday,
+    { name: "??", period: 1, style: "" }
+  ];
+
+  else if (day==="Wednesday") {
+	timetable.Wednesday = [
+    ...timetable.Wednesday,
+    { name: "??", period: 1, style: "" }
+  ];
+
+  else if (day==="Thursday") {
+	timetable.Thursday = [
+    ...timetable.Thursdayday,
+    { name: "??", period: 1, style: "" }
+  ];
+
+  else if (day==="Friday") {
+	timetable.Friday = [
+    ...timetable.Friday,
+    { name: "??", period: 1, style: "" }
+  ];
+}
+  }
+
+
   let timetable = {
 	Monday: [
   	{
@@ -213,6 +247,9 @@
         	</button>
       	</td>
     	{/each}
+		<td>
+			<button on:click={() => addTimeSlot("Monday")} class="btn">+</button>
+			</td>
 
       <tr>
         <th scope="row" class="table-dark">Tue</th>
@@ -226,7 +263,9 @@
         	</button>
       	</td>
     	{/each}
-
+		<td>
+			<button on:click={() => addTimeSlot("Tuesday")} class="btn">+</button>
+			</td>
       </tr>
       <tr>
         <th scope="row" class="table-dark">Wed</th>
@@ -240,7 +279,8 @@
         	</button>
       	</td>
     	{/each}
-
+		<td><button on:click={() => addTimeSlot("Wednesday")} class="btn">+</button>
+			</td>
       </tr>
       <tr>
         <th scope="row" class="table-dark">Thrs</th>
@@ -254,7 +294,9 @@
         	</button>
       	</td>
     	{/each}
-
+		<td>
+			<button on:click={() => addTimeSlot("Thursday")} class="btn">+</button>
+			</td>
       </tr>
       <tr>
         <th scope="row" class="table-dark">Fri</th>
@@ -268,7 +310,9 @@
         	</button>
       	</td>
     	{/each}
-
+		<td>
+			<button on:click={() => addTimeSlot("Friday")} class="btn">+</button>
+			</td>
       </tr>
     </tbody>
   </table>
