@@ -63,7 +63,7 @@ if (day==="Monday") {
 
 
 
-  }
+  
 
   let timetable = {
 	Monday: [
@@ -396,9 +396,11 @@ if (day==="Monday") {
 </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" on:click={()=>deleteTimeSlot(curDay,curIndex,curName,curPeriod,curStyle)}></button>
-		<button type="button" class="btn btn-primary">Save Changes</button>
-		 on:click={()=>setTimeSlot(curDay,curIndex,curName,curPeriod,curStyle)}
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" 
+		on:click={()=>deleteTimeSlot(curDay,curIndex)}>Delete</button>
+		<button type="button" class="btn btn-primary" data-bs-dismiss="modal" 
+		 on:click={()=>setTimeSlot(curDay,curIndex ,curName,curPeriod,curStyle)}>Save Changes</button>
+		
       </div>
     </div>
   </div>
