@@ -1,14 +1,20 @@
 <script>
  import supabase from "$lib/db";
+ 
 
- var  curday = ""
- var  curIndex =""
- var  curName=""
- var  curPeriod=""
- var  curStyle=""
+ let curDay ;
+ let curIndex ;
+ let curName ;
+ let curPeriod ;
+ let curStyle ;
 
- function showCurData(){
-	 
+ function showCurData(day,index,name,period,style){
+	curDay = day
+	curIndex = index
+	curName = name
+	curPeriod = period
+	curStyle = style
+
  }
 
   function addTimeSlot(day){
@@ -44,6 +50,20 @@ if (day==="Monday") {
 }
   }
 
+  function deleteTimeSlot(day,index){
+	 timetable[day].splice(index,1);
+	 timetable=timetable;
+  }
+
+  function setTimeSlot(day,index,newName,newPeriod,newStyle){
+	  timetable [day] [index] . name = newName ;
+	  timetable [day] [index] . period = newPeriod ;
+	  timetable [day] [index] . style = newStyle ;
+  }
+
+
+
+  }
 
   let timetable = {
 	Monday: [
@@ -218,6 +238,11 @@ if (day==="Monday") {
 	],
   };
 
+  async function logout() {
+    const { error } = await supabase.auth.signOut();
+
+    if (error) alert(error.message); // alert if error
+  }
 
 
 </script>
@@ -247,11 +272,12 @@ if (day==="Monday") {
     <tbody>
       <tr>
         <th scope="row" class="table-dark" >Mon</th>
-        {#each timetable.Monday as timeSlot, index}
+        {#each timetable.Monday as timeSlot, index }
       	<td colspan={timeSlot.period} class={timeSlot.style}>
         	<button
           	type="button"
           	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
+			  on:click={()=>showCurData("Monday",index,timeSlot.name,timeSlot.period,timeSlot.style)}
         	>
           	{timeSlot.name}
         	</button>
@@ -268,6 +294,7 @@ if (day==="Monday") {
         	<button
           	type="button"
           	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
+			  on:click={()=>showCurData("Tuesday",index,timeSlot.name,timeSlot.period,timeSlot.style)}
         	>
           	{timeSlot.name}
         	</button>
@@ -284,6 +311,7 @@ if (day==="Monday") {
         	<button
           	type="button"
           	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
+			  on:click={()=>showCurData("Wednesday",index,timeSlot.name,timeSlot.period,timeSlot.style)}
         	>
           	{timeSlot.name}
         	</button>
@@ -299,6 +327,7 @@ if (day==="Monday") {
         	<button
           	type="button"
           	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
+			  on:click={()=>showCurData("Thursday",index,timeSlot.name,timeSlot.period,timeSlot.style)}
         	>
           	{timeSlot.name}
         	</button>
@@ -315,6 +344,7 @@ if (day==="Monday") {
         	<button
           	type="button"
           	class="btn" data-bs-toggle="modal"  data-bs-target="#editTimeSlot" 
+			  on:click={()=>showCurData("Friday",index,timeSlot.name,timeSlot.period,timeSlot.style)}
         	>
           	{timeSlot.name}
         	</button>
@@ -340,18 +370,20 @@ if (day==="Monday") {
       <div class="modal-body">
 		<div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Name</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
+  bind:value={curName}  >
 </div>
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Period</span>
-  <input type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
+  bind:value={curPeriod}>
 </div>
 
       
 		<div class="input-group mb-3">
 			<label class="input-group-text" for="styleSelect">Period</label>
-  <select class="form-select" id="styleSelect">
+  <select class="form-select" id="styleSelect" bind:value={curStyle}>
     <option selected value="">Default</option>
     <option value="table-primary">Blue</option>
     <option value="table-success">Green</option>
@@ -364,9 +396,9 @@ if (day==="Monday") {
 </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" on:click={()=>deleteTimeSlot(curDay,curIndex,curName,curPeriod,curStyle)}></button>
 		<button type="button" class="btn btn-primary">Save Changes</button>
-
+		 on:click={()=>setTimeSlot(curDay,curIndex,curName,curPeriod,curStyle)}
       </div>
     </div>
   </div>
