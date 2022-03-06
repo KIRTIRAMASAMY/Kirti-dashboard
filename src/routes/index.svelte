@@ -242,7 +242,7 @@ getEntries();
 
       
 		<div class="input-group mb-3">
-			<label class="input-group-text" for="styleSelect">Period</label>
+			<label class="input-group-text" for="styleSelect">Colour</label>
   <select class="form-select" id="styleSelect" bind:value={curStyle}>
     <option selected value="">Default</option>
     <option value="table-primary">Blue</option>
